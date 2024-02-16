@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progetto BW gruppo 7 - RESULTS PAGE</title>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+    <header>
+        <a href="https://epicode.com/it/" id="epicode"> <img src="assets/img/epicode_logo.png" alt="logo di epicode" /></a>
+    </header>
+
+
+    <main id="mainResults">
+        <h1>Results</h1>
+        <p>The summary of your answers:</p>
+
+        <section id="resultsSection">
+            <div id="correctAnswers">
+                <h2>Correct</h2>
+                <p id="correctPercentage"> </p><br>
+                <p><span id="correctsNumber"></span> / <span class="questionsNumber"></span>  questions </p>
+
+            </div>
+
+            <div id="graph">
+                <canvas id="myChart"></canvas>
+            </div>
+
+            <div id="wrongAnswers">
+                <h2>Wrong</h2>
+                <p id="wrongPercentage"> </p><br>
+                <p><span id="wrongsNumber"></span> / <span class="questionsNumber"></span> questions </p>
+            </div>
+        </section>
+        <a href="feedback.html"><button type="button" id="btnRate">RATE US</button> </a>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/results.js"></script>
+
+</body>
