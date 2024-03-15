@@ -1,0 +1,233 @@
+body,
+html {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    font-family: "Signika", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+#pagina {
+    height: 100%;
+}
+
+.player {
+    padding: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    color: white;
+}
+
+.leftPlayer {
+    img {
+        padding: 10px;
+        width: 56px;
+        height: 56px;
+    }
+}
+
+.progress {
+    width: 500px;
+}
+
+.time {
+    width: 0;
+    height: 3px;
+    background-color: #474747
+}
+
+.topMainBar {
+    width: 99%;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+
+.playerActive {
+    display: inline-block;
+}
+
+.playerDisactive {
+    display: none;
+}
+
+#libreria {
+    height: 69vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+#mainSection {
+    height: 80vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    overflow-x: hidden;
+}
+
+
+#mainContent {
+    background: linear-gradient(180deg, rgba(35, 35, 35, 1) 0%, rgba(18, 18, 18, 1) 20%);
+}
+
+.topMainBar {
+    background-color: transparent;
+}
+
+.topMainBarScorrevole {
+    background-color: rgba(18, 18, 18, 1);
+}
+
+#imagineTopMain {
+    width: 97%;
+}
+
+#mainTopSection {
+    width: 95%;
+}
+
+.card {
+    width: 19%;
+}
+
+.card-img-top {
+    border-radius: 50%;
+}
+
+.homeAlbum:hover {
+    cursor: pointer;
+    background-color: lightgray !important;
+}
+
+.homeArtist:hover {
+    cursor: pointer;
+    background-color: gray !important;
+}
+
+.buttonPlayBrani svg:hover {
+    color: chartreuse !important;
+}
+
+.volume {
+    input[type=range] {
+        display: none;
+    }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon-size {
+        font-size: 2rem;
+    }
+
+    .bar-hoverbox {
+        padding: 10px 15px;
+        opacity: 0.7;
+        transition: opacity .2s;
+
+        &:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+    }
+
+    .bar {
+        background: #999;
+        height: 7px;
+        width: 120px;
+        border-radius: 15px;
+        overflow: hidden;
+        pointer-events: none;
+
+        .bar-fill {
+            background: #FFF;
+            width: 0%;
+            height: 100%;
+            background-clip: border-box;
+            pointer-events: none;
+        }
+    }
+}
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+.coloreTesto {
+    color: #939392;
+}
+
+#artistCoverImg {
+    height: 250px;
+    background-image: url(../img/image-11.jpg);
+    background-size: cover;
+}
+
+#artistMainSection {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(35, 35, 35, 1) 0%, rgba(18, 18, 18, 1) 20%);
+}
+
+
+#olArtisti {
+    list-style-type: none;
+    counter-reset: my-counter;
+    padding: 0;
+  }
+  #olArtisti li {
+    counter-increment: my-counter;
+    margin-bottom: 10px;
+  }
+  #olArtisti li::before {
+    content: counter(my-counter); 
+    display: inline-block;
+    width: 20px; 
+    text-align: right; 
+    margin-right: 10px;
+  }
+  #olArtisti li div div {
+    display: flex;
+    align-items: center;
+  }
+
+  #albumPageImg {
+    width: 10%;
+  }
+
+  #mainFooter hr {
+    border: 2px solid gray;
+  }
+
+  #mainFooter a{
+    text-decoration: none;
+    color: gray;
+  }
+
+  #mainFooter a:hover {
+    text-decoration: underline;
+    color: white;
+  }
+
+  .braniHome {
+    height: 50%;
+  }
+  #appendiLista a{
+    text-decoration: none;
+
+  }
+
+  #appendiLista a:hover{
+    text-decoration: underline;
+
+  }

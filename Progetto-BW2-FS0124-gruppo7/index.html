@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BW_Spotify</title>
+  <link rel="shortcut icon" type="image/x-icon" href="https://m.media-amazon.com/images/I/51rttY7a+9L.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+
+ 
+
+  <div id="pagina" class="container-fluid m-0 p-0">
+    <div class="row-cols-2 d-flex justify-content-evenly">
+      <div class="container mt-3" style="width: 23%">
+        <div class="row bg-dark rounded-3 p-2 mb-3">
+          <div class="container">
+            <div class="row">
+              <p class="d-inline-flex gap-1 col-12 mt-2">
+                  <button class="btn btn-dark fw-bold fs-3 d-flex align-items-center justify-content-center"
+                  role="button" id="btnHome">
+                  <ion-icon name="home-outline" class="pe-2"></ion-icon>
+                  HOME</button>
+              </p>
+              <p class="d-inline-flex gap-1 col-12 mb-2">
+                <button class="btn btn-dark fw-bold fs-3 d-flex align-items-center justify-content-center" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="true"
+                  aria-controls="collapseExample">
+                  <ion-icon name="search-outline" class="pe-2"></ion-icon>
+                  CERCA
+                </button>
+              </p>
+              <div class="collapse" id="collapseExample">
+                <div class="card card-body bg-dark w-100 border-0 p-0">
+                  <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Cerca una canzone"
+                      aria-label="Search" />
+                    <button class="btn btn-outline-light" type="submit">
+                      Cerca
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row bg-dark rounded-3 p-2">
+          <div class="container">
+            <div class="row mb-3">
+              <p class="d-inline-flex gap-1 col-8 mb-0">
+                <a class="btn btn-dark fw-bold fs-3 d-flex align-items-center justify-content-center" href="#" role="button">
+                  <ion-icon name="library-outline" class="pe-2"></ion-icon>
+                  La tua libreria</a>
+              </p>
+              <div class="d-inline-flex gap-1 col-4 justify-content-end">
+                <button type="button" class="btn btn-dark rounded-5 fs-3 d-flex align-items-center justify-content-center">
+                  <ion-icon name="add-outline"></ion-icon>
+                </button>
+                <button type="button" class="btn btn-dark rounded-5 fs-3 d-flex align-items-center justify-content-center">
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </button>
+              </div>
+            </div>
+            <div class="row" id="libreria">
+              <div class="container-fluid text-white">
+                <div class="row mb-3">
+                  <button type="button" class="btn btn-dark rounded-2 fs-3 container-fluid">
+                    <div class="row">
+                      <div class="col-3 p-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-50 bi bi-plus-square-fill"
+                          viewBox="0 0 16 16">
+                          <path
+                            d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0" />
+                        </svg>
+                      </div>
+                      <div class="col-9 d-flex justify-content-start align-items-center">
+                        <h3 class="m-0 text-start">Crea la tua playlist</h3>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div class="row mb-3 mt-3">
+                  <button type="button" class="btn btn-dark rounded-2 fs-3 container-fluid">
+                    <div class="row">
+                      <div class="col-3 p-0">
+                        <img src="https://i.scdn.co/image/ab67706c0000da8470d229cb865e8d81cdce0889"
+                          class="w-50 rounded" />
+                      </div>
+                      <div class="col-9 container-fluid">
+                        <div class="row">
+                          <h3 class="m-0 col-12 text-start">
+                            Brani che ti piacciono
+                          </h3>
+                          <p class="col-12 text-start fs-4 m-0 text-white-50">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                              class="bi bi-pin-angle-fill text-success" viewBox="0 2 16 16">
+                              <path
+                                d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a6 6 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707s.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a6 6 0 0 1 1.013.16l3.134-3.133a3 3 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146" />
+                            </svg>
+                            Playlist • <span>2000</span> brani
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div class="row mb-3">
+                  <button type="button" class="btn btn-dark rounded-2 fs-3 container-fluid">
+                    <div class="row">
+                      <div class="col-3 p-0">
+                        <img src="assets/img/episodi.png" class="w-50 rounded" />
+                      </div>
+                      <div class="col-9 container-fluid">
+                        <div class="row">
+                          <h3 class="m-0 col-12 text-start">
+                            I tuoi episodi
+                          </h3>
+                          <p class="col-12 text-start fs-5 text-white-50 m-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                              class="bi bi-pin-angle-fill text-success" viewBox="0 2 16 16">
+                              <path
+                                d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a6 6 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707s.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a6 6 0 0 1 1.013.16l3.134-3.133a3 3 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146" />
+                            </svg>
+                            Episodi salvati e scaricati
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div class="row mb-3">
+                  <button type="button" class="btn btn-dark rounded-2 fs-3 container-fluid">
+                    <div class="row">
+                      <div class="col-3 p-0">
+                        <img src="assets/img/image-3.jpg" class="w-50 rounded" />
+                      </div>
+                      <div class="col-9 container-fluid">
+                        <div class="row">
+                          <h3 class="m-0 col-12 text-start">
+                            Massima Concentrazione
+                          </h3>
+                          <p class="col-12 text-start fs-5 text-white-50 m-0">
+                            Playlist • gruppo7
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div class="row mb-3">
+                  <button type="button" class="btn btn-dark rounded-2 fs-3 container-fluid">
+                    <div class="row">
+                      <div class="col-3 p-0">
+                        <img src="assets/img/image-4.jpg" class="w-50 rounded" />
+                      </div>
+                      <div class="col-9 container-fluid">
+                        <div class="row">
+                          <h3 class="m-0 col-12 text-start">
+                            Peaceful Piano
+                          </h3>
+                          <p class="col-12 text-start fs-5 text-white-50 m-0">
+                            Playlist • gruppo7
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div class="row mb-3">
+                  <button type="button" class="btn btn-dark rounded-2 fs-3 container-fluid">
+                    <div class="row">
+                      <div class="col-3 p-0">
+                        <img src="assets/img/image-5.jpg" class="w-50 rounded" />
+                      </div>
+                      <div class="col-9 container-fluid">
+                        <div class="row">
+                          <h3 class="m-0 col-12 text-start">Lofi Beats</h3>
+                          <p class="col-12 text-start fs-5 text-white-50 m-0">
+                            Playlist • gruppo7
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div class="row mb-3">
+                  <button type="button" class="btn btn-dark rounded-2 fs-3 container-fluid">
+                    <div class="row">
+                      <div class="col-3 p-0">
+                        <img src="assets/img/image-6.jpg" class="w-50 rounded" />
+                      </div>
+                      <div class="col-9 container-fluid">
+                        <div class="row">
+                          <h3 class="m-0 col-12 text-start">Jazz Vibes</h3>
+                          <p class="col-12 text-start fs-5 text-white-50 m-0">
+                            Playlist • gruppo7
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div class="row mb-3">
+                  <button type="button" class="btn btn-dark rounded-2 fs-3 container-fluid">
+                    <div class="row">
+                      <div class="col-3 p-0">
+                        <img src="assets/img/image-7.jpg" class="w-50 rounded" />
+                      </div>
+                      <div class="col-9 container-fluid">
+                        <div class="row">
+                          <h3 class="m-0 col-12 text-start">
+                            Caffè del Buongiorno
+                          </h3>
+                          <p class="col-12 text-start fs-5 text-white-50 m-0">
+                            Playlist • gruppo7
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div class="row mb-3">
+                  <button type="button" class="btn btn-dark rounded-2 fs-3 container-fluid">
+                    <div class="row">
+                      <div class="col-3 p-0">
+                        <img src="assets/img/image-9.jpg" class="w-50 rounded" />
+                      </div>
+                      <div class="col-9 container-fluid">
+                        <div class="row">
+                          <h3 class="m-0 col-12 text-start">
+                            Canta Sotto La Doccia
+                          </h3>
+                          <p class="col-12 text-start fs-5 text-white-50 m-0">
+                            Playlist • gruppo7
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div class="row mb-3">
+                  <button type="button" class="btn btn-dark rounded-2 fs-3 container-fluid">
+                    <div class="row">
+                      <div class="col-3 p-0">
+                        <img src="assets/img/image-10.jpg" class="w-50 rounded" />
+                      </div>
+                      <div class="col-9 container-fluid">
+                        <div class="row">
+                          <h3 class="m-0 col-12 text-start">
+                            Operazione Buonumore
+                          </h3>
+                          <p class="col-12 text-start fs-5 text-white-50 m-0">
+                            Playlist • gruppo7
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div class="row mb-3">
+                  <button type="button" class="btn btn-dark rounded-2 fs-3 container-fluid">
+                    <div class="row">
+                      <div class="col-3 p-0">
+                        <img src="assets/img/image-11.jpg" class="w-50 rounded" />
+                      </div>
+                      <div class="col-9 container-fluid">
+                        <div class="row">
+                          <h3 class="m-0 col-12 text-start">Mercury</h3>
+                          <p class="col-12 text-start fs-5 text-white-50 m-0">
+                            Album • Imagine Dragons
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div class="row mb-3">
+                  <button type="button" class="btn btn-dark rounded-2 fs-3 container-fluid">
+                    <div class="row">
+                      <div class="col-3 p-0">
+                        <img src="assets/img/image-13.jpg" class="w-50 rounded" />
+                      </div>
+                      <div class="col-9 container-fluid">
+                        <div class="row">
+                          <h3 class="m-0 col-12 text-start">
+                            Pulizie di Casa
+                          </h3>
+                          <p class="col-12 text-start fs-5 text-white-50 m-0">
+                            Playlist • gruppo7
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div class="row mb-3">
+                  <button type="button" class="btn btn-dark rounded-2 fs-3 container-fluid">
+                    <div class="row">
+                      <div class="col-3 p-0">
+                        <img src="assets/img/image-14.jpg" class="w-50 rounded" />
+                      </div>
+                      <div class="col-9 container-fluid">
+                        <div class="row">
+                          <h3 class="m-0 col-12 text-start">
+                            Allenamento a Casa
+                          </h3>
+                          <p class="col-12 text-start fs-5 text-white-50 m-0">
+                            Playlist • gruppo7
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div class="row mb-3">
+                  <button type="button" class="btn btn-dark rounded-2 fs-3 container-fluid">
+                    <div class="row">
+                      <div class="col-3 p-0">
+                        <img src="assets/img/image-15.jpg" class="w-50 rounded" />
+                      </div>
+                      <div class="col-9 container-fluid">
+                        <div class="row">
+                          <h3 class="m-0 col-12 text-start">
+                            Casa Dolce Casa
+                          </h3>
+                          <p class="col-12 text-start fs-5 text-white-50 m-0">
+                            Playlist • gruppo7
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div class="row mb-3">
+                  <button type="button" class="btn btn-dark rounded-2 fs-3 container-fluid">
+                    <div class="row">
+                      <div class="col-3 p-0">
+                        <img src="assets/img/image-16.jpg" class="w-50 rounded" />
+                      </div>
+                      <div class="col-9 container-fluid">
+                        <div class="row">
+                          <h3 class="m-0 col-12 text-start">
+                            Lavorare da Casa
+                          </h3>
+                          <p class="col-12 text-start fs-5 text-white-50 m-0">
+                            Playlist • gruppo7
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <main class="container-fluid mt-3 rounded-3 p-0 w-75" id="mainContent">
+        <div class="row mb-3 p-3 topMainBar">
+          <div class="col-12 d-flex justify-content-between">
+            <div class="d-inline-flex gap-1 col-4">
+              <button type="button"
+                class="btn btn-dark rounded-5 fs-3 d-flex align-items-center justify-content-center">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+              </button>
+              <button type="button"
+                class="btn btn-dark rounded-5 fs-3 d-flex align-items-center justify-content-center">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </button>
+            </div>
+            <div class="d-inline-flex gap-1 col-5 justify-content-end">
+              <button type="button"
+                class="btn btn-dark rounded-5 fs-3 d-flex align-items-center justify-content-center">
+                <ion-icon name="notifications-outline"></ion-icon>
+              </button>
+              <button type="button"
+                class="btn btn-dark rounded-5 fs-3 d-flex align-items-center justify-content-center">
+                <ion-icon name="people-outline"></ion-icon>
+              </button>
+              <a class="nav-link dropdown-toggle text-secondary d-flex justify-content-center align-content-center p-2"
+                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="assets/img/avatar.png" alt="avatar" id="avatar" style="width: 30px; height: 30px" />
+              </a>
+              <ul class="dropdown-menu bg-black dropdown-menu-end" style="width: 13%">
+                <li class="fs-5">
+                  <a class="dropdown-item text-white" href="#">
+                    <img src="assets/img/avatar.png" alt="avatar" id="avatar" style="width: 30px" />
+                    Epicoder #1
+                  </a>
+                </li>
+                <li class="fs-5">
+                  <a class="dropdown-item text-white" href="#">Manage Profiles</a>
+                </li>
+                <li class="fs-5">
+                  <a class="dropdown-item text-white" href="#">Account</a>
+                </li>
+                <li class="fs-5">
+                  <a class="dropdown-item text-white" href="#">Help Center</a>
+                </li>
+                <li class="fs-5">
+                  <hr class="dropdown-divider" />
+                </li>
+                <li class="fs-5">
+                  <a class="dropdown-item text-white" href="#">Signout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row p-0" id="mainSection">
+          <div class="container-fluid" id="overflowMain">
+
+          </div>
+        </div>
+
+
+      </main>
+
+      <div id="player" class="playerDisactive">
+        <div id="playerInfo">
+          <div class="leftPlayer d-flex"></div>
+        </div>
+        <div id="playerPlay" class="d-flex flex-column text-center">
+          <audio id="audio"></audio>
+          <div id="controls">
+            <button class="shuffle bg-transparent text-white border-0">
+              <ion-icon name="shuffle"></ion-icon>
+            </button>
+            <button class="prev bg-transparent text-white border-0">
+              <ion-icon name="play-skip-back"></ion-icon>
+            </button>
+            <button class="play bg-transparent text-white border-0">
+              <i class="bi bi-play-circle-fill fs-5"></i>
+            </button>
+            <button class="pause bg-transparent text-white border-0 playerDisactive">
+              <i class="bi bi-pause-circle-fill fs-5"></i>
+            </button>
+            <button class="next bg-transparent text-white border-0">
+              <ion-icon name="play-skip-forward"></ion-icon>
+            </button>
+            <button class="repeat bg-transparent text-white border-0">
+              <ion-icon name="repeat"></ion-icon>
+            </button>
+          </div>
+          <div>
+            <div class="d-flex align-items-center">
+              <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="50"
+                aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar"></div>
+              </div>
+
+              <p id="timeBar" class=".text-warning m-0 p-0"></p>
+            </div>
+          </div>
+        </div>
+
+        <div id="playerObj">
+          <div class="volume">
+            <input type="range" min="0" max="100" value="50" class="volume-range">
+            <div class="icon">
+              <i class="fa fa-volume-up icon-size" aria-hidden="true"></i>
+            </div>
+            <div class="bar-hoverbox">
+              <div class="bar">
+                <div class="bar-fill"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+      <script src="assets/js/script.js"></script>
+</body>
+
+</html>
