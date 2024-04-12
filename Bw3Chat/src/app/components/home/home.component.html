@@ -1,0 +1,95 @@
+<app-navbar *ngIf="local" class="mb-3"></app-navbar>
+<div class="container mt-2">
+  <div class="row justify-content-center">
+
+    <div mdbDropdown class="btn-group p-0">
+      <button type="button" class="btn btn-dark dropdown-toggle m-0" mdbDropdownToggle aria-expanded="false">
+        Action
+      </button>
+      <ul mdbDropdownMenu class="dropdown-menu">
+        <li><a class="dropdown-item" (click)='setCategory("")'>visualizza tutti</a></li>
+        <li><a class="dropdown-item" (click)='setCategory("all")'>All</a></li>
+        <li><a class="dropdown-item" (click)='setCategory("cars")'>Cars</a></li>
+        <li><a class="dropdown-item" (click)='setCategory("gaming")'>Gaming</a></li>
+        <li>
+          <hr class="dropdown-divider" />
+        </li>
+        <li><a class="dropdown-item" href="#">Separated link</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <mdb-form-control class="m-2">
+    <div class="bordo">
+      <label for="titlePost">Dai un titolo al tuo Post</label>
+      <input type="text" [(ngModel)]="postTitle" name="titlePost" class="form-control">
+    </div>
+    <div class="bordo">
+
+      <label for="descriptionPost">Scrivi qui il tuo Post!</label>
+      <textarea [(ngModel)]="postContent" mdbInput class="form-control" id="descriptionPost" rows="4"></textarea>
+      <button class="btn btn-dark" type="button" (click)="createPost()">Crea post</button>
+    </div>
+  </mdb-form-control>
+</div>
+
+<div class="container d-flex">
+  <div class="row ">
+    <div *ngFor="let key of data;let i = index">
+      <div class="col-6">
+        <div *ngIf="key.category===category&&activeFormGet">
+          <h3 class="card-text"> {{key.displayName}}</h3>
+          <div class="card">
+            <div class="card-header">
+              {{key.category}}
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Title: {{key.title}}</h5>
+              <p class="card-text"> {{key.description}}</p>
+             
+              <div *ngIf="key.uId==local">
+                <button (click)="onDeletePost(key.postId)">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+        <div class="col-6 d-flex justify-content-end">
+        <div *ngIf="!activeFormGet">
+
+
+          <div class="card">
+            <div class="card-header">
+              Featured
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Title: {{key.title}}</h5>
+              <p class="card-text"> {{key.description}}</p>
+              <h3 class="card-text">{{key.category}}</h3>
+              <div *ngIf="key.uId==local">
+                <button (click)="onDeletePost(key.postId)">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        </div>
+    </div>
+  </div>
+</div>
+
+<!--<div class="card">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>-->

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "epicode-bw3-test": {
+      "hosting": {
+        "buildweek": [
+          "epicode-bw3-test"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "epicode-bw3-test"
+  }
+}
