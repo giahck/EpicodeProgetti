@@ -8,6 +8,7 @@ import entities.TitoliViaggi.TitoloDiViaggio;
 import entities.UtenteETessera.Tessera;
 import entities.UtenteETessera.Utente;
 import entities.mezzi.Mezzo;
+import javafx.scene.control.TextArea;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -81,16 +82,15 @@ public class TitoloDiViaggioDao {
 //     -Deve essere possibile tenere traccia del numero di biglietti e/o abbonamenti emessi
 //    in un dato periodo di tempo in totale e per punto di emissione
 
- public List<CountRivenditoriViaggi> getTotaleBiglietti(LocalDate inizio, LocalDate fine) {
-     Query query = em.createQuery("SELECT new ResultDto.CountRivenditoriViaggi(t.rivenditore, COUNT(t) AS numTitoli) " +
-             "FROM TitoloDiViaggio t " +
-             "WHERE t.emissioneTitoloViaggio BETWEEN :startDate AND :endDate " +
-             "GROUP BY t.rivenditore"
-     );
-       query.setParameter("startDate", inizio);
-       query.setParameter("endDate", fine);
-       return query.getResultList();
-   }
+    public List<CountRivenditoriViaggi> getTotaleBiglietti(LocalDate inizio, LocalDate fine) {
+        Query query = em.createQuery("SELECT new ResultDto.CountRivenditoriViaggi(t.rivenditore, COUNT(t), t)  " +
+                "FROM TitoloDiViaggio t " +
+                "WHERE t.emissioneTitoloViaggio BETWEEN :startDate AND :endDate " +
+                "GROUP BY t");
+        query.setParameter("startDate", inizio);
+        query.setParameter("endDate", fine);
+        return query.getResultList();
+    }
 
 
    /* public void getStatoAbbonamento(String idNumeroTessera) {
@@ -121,7 +121,7 @@ public class TitoloDiViaggioDao {
 */
 
     //soluzione 3 che stampa anche il nome della tessera
-public void getStatoAbbonamento3(String idNumeroTessera) {
+public void getStatoAbbonamento3(String idNumeroTessera, TextArea idTextArea) {
     LocalDate dataOggi = LocalDate.now();
     UUID idNumeroTesString = UUID.fromString(idNumeroTessera);
 
@@ -129,16 +129,18 @@ public void getStatoAbbonamento3(String idNumeroTessera) {
     query.setParameter("idNumeroTessera", idNumeroTesString);
 
     StatoAbbonamento statoAbbonamento;
+    idTextArea.setVisible(true);
     try {
         statoAbbonamento = (StatoAbbonamento) query.getSingleResult();
         if (statoAbbonamento != null) {
-            System.out.println("Nome proprietario tessera: " + statoAbbonamento.getNomeTessera() + " " + statoAbbonamento.getCognomeTessera());
-            System.out.println("Scadenza abbonamento: " + statoAbbonamento.getScadenzaAbbonamento());
+            String output = "Nome proprietario tessera: " + statoAbbonamento.getNomeTessera() + " " + statoAbbonamento.getCognomeTessera() + "\n";
+            output += "Scadenza abbonamento: " + statoAbbonamento.getScadenzaAbbonamento();
+            idTextArea.setText(output);
         } else {
-            System.out.println("Nessun abbonamento trovato per il numero di tessera specificato.");
+            idTextArea.setText("Nessun abbonamento trovato per il numero di tessera specificato.");
         }
     } catch (NoResultException e) {
-        System.out.println("Nessun abbonamento trovato per il numero di tessera specificato.");
+        idTextArea.setText("Nessun abbonamento trovato per il numero di tessera specificato.");
     }
 }
 

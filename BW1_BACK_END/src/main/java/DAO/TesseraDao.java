@@ -87,29 +87,29 @@ public class TesseraDao {
             System.out.println("Tessera valida, scadenza prevista in data: " + DataScadenza);
         }*/
 
-        public void getValiditaTessera(String idNumeroTessera) {
-            UUID idNumeroTesString = UUID.fromString(idNumeroTessera);
+    public String getValiditaTessera(String idNumeroTessera) {
+        UUID idNumeroTesString = UUID.fromString(idNumeroTessera);
+        Query query = em.createQuery("SELECT t FROM Tessera t " +
+                "WHERE t.idTessera = :idNumeroTessera"
+        );
+        query.setParameter("idNumeroTessera", idNumeroTesString);
 
-            Query query = em.createQuery("SELECT t FROM Tessera t " +
-                    "WHERE t.idTessera = :idNumeroTessera"
-            );
-            query.setParameter("idNumeroTessera", idNumeroTesString);
+        try {
+            Tessera tessera = (Tessera) query.getSingleResult();
+            LocalDate scadenza = tessera.getScadenza();
 
-            try {
-                Tessera tessera = (Tessera) query.getSingleResult();
-                LocalDate scadenza = tessera.getScadenza();
-
-                if (LocalDate.now().isBefore(scadenza)) {
-                    System.out.println("La tessera è valida.");
-                    System.out.println("Nome e cognome proprietario/a tessera: " + tessera.getUtente().getNome()+ " "+tessera.getUtente().getCognome()+ " nato/a il: "+tessera.getUtente().getDataNascita());
-                    System.out.println("Scadenza abbonamento prevista in data: " + tessera.getScadenza());
-                } else {
-                    System.out.println("La tessera non è valida. È necessario rinnovare l'abbonamento.");
-                }
-            } catch (NoResultException e) {
-                System.out.println("Nessuna tessera trovata per l'id specificato.");
+            if (LocalDate.now().isBefore(scadenza)) {
+                String output = "La tessera è valida.\n";
+                output += "Nome e cognome proprietario/a tessera: " + tessera.getUtente().getNome()+ " "+tessera.getUtente().getCognome()+ " nato/a il: "+tessera.getUtente().getDataNascita() + "\n";
+                output += "Scadenza abbonamento prevista in data: " + tessera.getScadenza();
+                return output;
+            } else {
+                return "La tessera non è valida. È necessario rinnovare anche l'abbonamento.";
             }
+        } catch (NoResultException e) {
+            return "Nessuna tessera trovata per l'id specificato.";
         }
+    }
 
     }
 
