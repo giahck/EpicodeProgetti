@@ -13,7 +13,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="783.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
       <Button fx:id="faiVedereButton" layoutX="31.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#faiVedere" prefHeight="60.0" prefWidth="123.0" text="Button" textFill="#1da31b" />
-      <GridPane fx:id="gridPane1" layoutX="197.0" layoutY="169.0" prefHeight="178.0" prefWidth="486.0" AnchorPane.bottomAnchor="53.0" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="169.0">
+      <GridPane fx:id="gridPane1" layoutX="197.0" layoutY="169.0" prefHeight="178.0" prefWidth="486.0" visible="false" AnchorPane.bottomAnchor="53.0" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="169.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
