@@ -144,10 +144,4 @@ La Pagina di Quiz è stata sviluppata utilizzando le seguenti tecnologie:
 - JavaScript: Per la logica di funzionamento del quiz, inclusi il timer e la gestione delle risposte.
 - Chart.js: Per la visualizzazione del timer e del grafico a torta. Il codice è stato testato utilizzando Chart.js versione (https://cdn.jsdelivr.net/npm/chart.js)
 
-## Autori
-- Clarissa Piovesan
-- Gianluca Giacchetta
-- Vito Dagnello
-- Stefano Fortezza
-- Mishel Cakalli
-- Lucian Andrei Oprica
+
