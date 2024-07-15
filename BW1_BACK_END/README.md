@@ -9,9 +9,12 @@ Occorre inoltre permettere la verifica rapida della validità di un abbonamento 
 Ogni mezzo in servizio può essere assegnato ad una tratta, che è caratterizzata da una zona di partenza, un capolinea ed un tempo medio di percorrenza. 
 Occorre tenere traccia del numero di volte che un mezzo percorre una tratta e del tempo effettivo di percorrenza di esse."_
 
+integrazione interffacia JavaFx per escuzione e verifica delle query
+
 ## Tecnologie utilizzate
 - Java
 - PostgreSQL
+- javaFx
 
  ## Struttura
 Di seguito le classi create con le relative relazioni:
